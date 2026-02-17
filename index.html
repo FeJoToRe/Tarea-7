@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head><!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Contenedor Principal */
+        .grid-container {
+            display: grid;
+            gap: 10px; /* Espacio entre las cajas */
+            padding: 10px;
+            grid-template-columns: 1fr 2fr; /* Dos columnas: una estrecha y otra ancha */
+            grid-template-areas: 
+                "header header"
+                "sidebar content"
+                "main main"
+                "footer footer";
+        }
+
+        /* Estilos generales para las celdas */
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+        }
+
+        /* Asignación de áreas y colores */
+        .header { grid-area: header; background-color: #6495ED; height: 60px; }
+        .footer { grid-area: footer; background-color: #6495ED; height: 40px; }
+        
+        .sidebar { grid-area: sidebar; background-color: #D3D3D3; min-height: 400px; }
+        
+        .main-red { grid-area: main; background-color: #A52A2A; min-height: 250px; }
+
+        /* Contenedor derecho con sub-cajas */
+        .content-area { 
+            grid-area: content; 
+            background-color: #483D8B; /* Fondo azul oscuro */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .sub-box {
+            background-color: #70D6D1; /* Color turquesa */
+            flex: 1; /* Hace que ambas cajas midan lo mismo */
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <header class="box header"></header>
+    
+    <aside class="box sidebar"></aside>
+    
+    <div class="content-area">
+        <div class="sub-box"></div>
+        <div class="sub-box"></div>
+    </div>
+    
+    <main class="box main-red"></main>
+    
+    <footer class="box footer"></footer>
+</div>
+
+</body>
+</html>
