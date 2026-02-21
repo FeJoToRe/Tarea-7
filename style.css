@@ -1,49 +1,82 @@
 body {
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-        }
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
 
-        
-        .grid-container {
-            display: grid;
-            gap: 10px;
-            padding: 10px;
-            grid-template-columns: 1fr 2fr;
-            grid-template-areas: 
-                "header header"
-                "sidebar content"
-                "main main"
-                "footer footer";
-        }
 
-        
-        .box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100px;
-        }
+.grid-container {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    min-height: 1000px;
+}
 
-       
-        .header { grid-area: header; background-color: #6495ED; height: 60px; }
-        .footer { grid-area: footer; background-color: #6495ED; height: 40px; }
-        
-        .sidebar { grid-area: sidebar; background-color: #D3D3D3; min-height: 400px; }
-        
-        .main-red { grid-area: main; background-color: #A52A2A; min-height: 250px; }
 
-        
-        .content-area { 
-            grid-area: content; 
-            background-color: #483D8B;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 10px;
-        }
+.box {
+    position: absolute;
+    display: block;
+}
 
-        .sub-box {
-            background-color: #70D6D1;
-            flex: 1; 
-        }
+
+.header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: hsl(103, 79%, 66%);
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.footer {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    right: 10px;
+    background-color: hsl(103, 79%, 66%);
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    width: 42%;
+    min-height: 420px;
+    background-color: #69b5bb;
+    box-sizing: border-box;
+}
+
+.main-red {
+    position: absolute;
+    top: 510px;
+    left: 10px;
+    bottom: 100px;
+    right: 10px;
+    margin-top: 10px;
+    background-color: #701212;
+    min-height: 200px;
+    box-sizing: border-box;
+}
+
+
+.content-area {
+    position: absolute;
+    top: 90px;
+    left: 43.33%;
+    right: 10px;
+    background-color: #a7650f;
+    min-height: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sub-box {
+    position: relative;
+    background-color: #1b384b;
+    height: 190px;
+    margin-bottom: 10px;
+}
